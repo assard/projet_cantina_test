@@ -16,4 +16,4 @@ jobs:
     only:
       -tags
     steps:
-      -run : gh release create v0.0.1 'target/*.jar'
+      -run: gh release create v0.0.1 'target/*.jar'
