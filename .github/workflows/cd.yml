@@ -9,8 +9,11 @@ jobs:
   publish:
     runs-on: ubuntu-18.04
     steps:
-      - name : gat code
+      - name : get code
         uses : actions/checkout@v2 
+      - name : compilation and test
+        - run: sudo apt-get update && sudo apt-get install -y maven # Installation of maven
+          run: mvn verify
       - name : release creation
         uses: actions/create-release@v1
         env: 
@@ -20,3 +23,11 @@ jobs:
           release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
+      - name : upload jar
+        uses: actions/upload-release-asset@v1
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          with:
+            upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+            asset_path: ./target/cantina.menu-1.0-SNAPSHOT.jar
+            asset_name: cantina.menu.jar
