@@ -15,5 +15,5 @@ jobs:
       - compilation_and_test
     only:
       -tags
-    script:
-      gh release create v0.0.1 'target/*.jar'
+    steps:
+      -run : gh release create v0.0.1 'target/*.jar'
