@@ -14,6 +14,7 @@ jobs:
     dependencies:
       - compilation_and_test
     only:
-      -tags
+      - tags
     steps:
-      -run: gh release create v0.0.1 'target/*.jar'
+      - uses: actions/checkout@v2 
+      - run: gh release create v0.0.1 'target/*.jar'
