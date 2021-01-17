@@ -11,5 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2 
       - run: gh auth login
-      - name: release
       - run: gh release create v0.0.1.test 'target/*.jar'
