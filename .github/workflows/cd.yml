@@ -9,6 +9,14 @@ jobs:
   publish:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2 
-      - run: gh auth login --with-token < ${{ secrets.LOGIN }}
-      - run: gh release create v0.0.1.test 'target/*.jar'
+      - name : gat code
+        uses : actions/checkout@v2 
+      - name : release creation
+        uses: actions/create-release@v1
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
