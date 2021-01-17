@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: com.cicdlectures.menuserver.service.CreateMenuServiceTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.119 s <<< FAILURE! - in com.cicdlectures.menuserver.service.CreateMenuServiceTests
+savesANewMenu  Time elapsed: 0.1 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at com.cicdlectures.menuserver.service.CreateMenuServiceTests.savesANewMenu(CreateMenuServiceTests.java:61)
+
+reusesExistingMenu  Time elapsed: 0.015 s  <<< FAILURE!
+org.mockito.exceptions.verification.TooFewActualInvocations: 
+
+menuRepository.save(<Capturing argument>);
+Wanted 2 times:
+-> at com.cicdlectures.menuserver.service.CreateMenuServiceTests.reusesExistingMenu(CreateMenuServiceTests.java:81)
+But was 1 time:
+-> at com.cicdlectures.menuserver.service.CreateMenuService.createMenu(CreateMenuService.java:35)
+
+	at com.cicdlectures.menuserver.service.CreateMenuServiceTests.reusesExistingMenu(CreateMenuServiceTests.java:81)
+

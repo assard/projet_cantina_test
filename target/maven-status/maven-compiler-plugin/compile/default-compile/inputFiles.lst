@@ -1,0 +1,10 @@
+/home/wellan/Bureau/tsi/ci_cd/projet_cantina/src/main/java/com/cicdlectures/menuserver/model/Dish.java
+/home/wellan/Bureau/tsi/ci_cd/projet_cantina/src/main/java/com/cicdlectures/menuserver/controller/MenuController.java
+/home/wellan/Bureau/tsi/ci_cd/projet_cantina/src/main/java/com/cicdlectures/menuserver/repository/MenuRepository.java
+/home/wellan/Bureau/tsi/ci_cd/projet_cantina/src/main/java/com/cicdlectures/menuserver/dto/MenuDto.java
+/home/wellan/Bureau/tsi/ci_cd/projet_cantina/src/main/java/com/cicdlectures/menuserver/dto/DishDto.java
+/home/wellan/Bureau/tsi/ci_cd/projet_cantina/src/main/java/com/cicdlectures/menuserver/MenuServerApplication.java
+/home/wellan/Bureau/tsi/ci_cd/projet_cantina/src/main/java/com/cicdlectures/menuserver/model/Menu.java
+/home/wellan/Bureau/tsi/ci_cd/projet_cantina/src/main/java/com/cicdlectures/menuserver/service/CreateMenuService.java
+/home/wellan/Bureau/tsi/ci_cd/projet_cantina/src/main/java/com/cicdlectures/menuserver/service/ListMenuService.java
+/home/wellan/Bureau/tsi/ci_cd/projet_cantina/src/main/java/com/cicdlectures/menuserver/repository/DishRepository.java
