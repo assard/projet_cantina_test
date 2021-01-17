@@ -1,4 +1,4 @@
-name: project_cantina_cd
+name: project_cantina_tag
 on:
   push:
     branches:
