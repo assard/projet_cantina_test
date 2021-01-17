@@ -12,7 +12,7 @@ jobs:
       - name : get code
         uses : actions/checkout@v2 
       - name : compilation and test
-        - run: sudo apt-get update && sudo apt-get install -y maven # Installation of maven
+          run: sudo apt-get update && sudo apt-get install -y maven # Installation of maven
           run: mvn verify
       - name : release creation
         uses: actions/create-release@v1
