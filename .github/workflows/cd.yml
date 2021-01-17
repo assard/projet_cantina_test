@@ -11,8 +11,9 @@ jobs:
     steps:
       - name : get code
         uses : actions/checkout@v2 
-      - name : compilation and test
+      - name : installation of name
         run: sudo apt-get update && sudo apt-get install -y maven # Installation of maven
+      - name : compile and run test
         run: mvn verify
       - name : release creation
         uses: actions/create-release@v1
