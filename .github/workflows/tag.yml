@@ -11,10 +11,20 @@ jobs:
     steps:
       - name : get code
         uses : actions/checkout@v2 
-      - name : installation of name
-        run: sudo apt-get update && sudo apt-get install -y maven # Installation of maven
+      - name : installation of maven
+        run: sudo apt-get update && sudo apt-get install -y maven 
       - name : compile and run test
         run: mvn verify
+      - name : copy unit test report
+      run : mkdir unit_test_report && cp -r target/surefire-reports test_report
+      # To decomment when integration file are ready
+      # - name : copy integration test report
+      #   run : cp -r target/failsafe-reports test_report
+      - name : upload test reports
+        uses : actions/upload-artifact@v2
+        with : 
+          name : Unit test report
+          path : unit_test_report
       - name : release creation
         id : release_creation
         uses: actions/create-release@v1
@@ -30,7 +40,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.release_creation.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          upload_url: ${{ steps.release_creation.outputs.upload_url }} 
           asset_path: ./target/cantina.menu-1.0-SNAPSHOT.jar
           asset_name: cantina.menu.jar
           asset_content_type: application/java-archive
+      
